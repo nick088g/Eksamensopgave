@@ -4,7 +4,7 @@ img {
 
 body {
     background-color: whitesmoke;
-    position: relative;
+    /*    position: relative;*/
     margin: 0;
 }
 
@@ -17,6 +17,36 @@ body {
 
 h1 {
     color: black;
+    text-align: center;
+    font-size: 2.4rem;
+}
+
+p {
+    line-height: 1.4rem;
+}
+
+li {
+    line-height: 2.2rem;
+}
+
+#opgave_1 {
+    background-color: #dddddd;
+}
+
+#opgave_2 {
+    background-color: #c7c7c7;
+}
+
+#opgave_3 {
+    background-color: #adadad;
+}
+
+#opgave_4 {
+    background-color: grey;
+}
+
+#opgave_4 img {
+    /*    max-height: 500px;*/
 }
 
 /*-----------------naven-----------------*/
@@ -24,9 +54,10 @@ h1 {
 
 header nav {
     display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    margin: 1rem 0;
+    flex-direction: row;
+    /*    align-items: flex-end;*/
+    margin: 1rem 1rem;
+    justify-content: flex-end;
 }
 
 header nav a {
@@ -41,6 +72,7 @@ header nav a:link {
     padding: 1vw;
     color: white;
     font-size: 1em;
+
 }
 
 /* visited link */
@@ -62,13 +94,43 @@ header nav a:active {
 
 header {
     position: fixed;
-    /*        width: 100vw;*/
+    width: 100%;
     background: linear-gradient(#92f8d6, rgba(255, 255, 0, 0));
     border: 0.1vw;
     display: inline-block;
     background-size: cover;
     right: 0vw;
     top: 0vw;
+    margin: 0 auto;
+}
+
+@media only screen and (max-width:725px) {
+
+    header nav {
+        display: flex;
+        flex-direction: column;
+        text-align: right;
+        width: 50%;
+    }
+
+    header nav a {
+        font-size: 1rem;
+        padding: 0 0.4rem 0 0;
+    }
+
+    header nav a:last-child {
+        border-right: none;
+    }
+}
+
+header .logo {
+    display: inline-block;
+    flex-wrap: wrap;
+
+    max-height: 3rem;
+    max-width: 3rem;
+    margin-right: 5rem;
+
 }
 
 #footwrapper {
@@ -77,11 +139,10 @@ header {
 }
 
 .footer {
-    position: absolute;
-    color: #92f8d6;
-    height: 3vw;
-    background-color: #585858;
-    text-align: right;
+    color: white;
+    padding: 0.3rem;
+    background: linear-gradient(#92f8d6, rgba(255, 255, 0, 0));
+    text-align: center;
 
     background-size: cover;
 
@@ -93,7 +154,10 @@ header {
     flex-basis: 300px;
 
     margin-bottom: 0vw;
-    font-size: 1vw;
+    font-size: 1rem;
+    /*    margin: 0 auto;*/
+
+
 }
 
 /*
@@ -106,11 +170,12 @@ header {
 
 /*------------------sections------------------*/
 
+/*
 #sidenav {
     height: 100%;
     width: 100px;
     position: fixed;
-    /*    z-index: 1;*/
+        z-index: 1;
     top: 0;
     left: 0;
     background-color: rgba(146, 248, 214, 0.71);
@@ -123,7 +188,7 @@ header {
     background-size: cover;
 
 
-    /*    display: flex;*/
+        display: flex;
     flex-direction: column;
     align-items: flex-start;
 }
@@ -134,6 +199,7 @@ header {
     padding: 0.25rem;
     color: white;
 }
+*/
 
 .tema {
     margin-left: 100px;
@@ -141,7 +207,7 @@ header {
 
 
 section {
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
     /*        margin-left: 100px;*/
 }
@@ -152,9 +218,8 @@ section {
     flex-wrap: wrap;
     margin: 2vw;
     padding: 2vw;
-    border-bottom: 2px solid black;
+    /*    border-bottom: 2px solid black;*/
 }
-
 
 .column_1 {
     flex-grow: 1;
@@ -178,6 +243,17 @@ section {
     border: 2px solid black;
 }
 
+.column_3 {
+    flex-grow: 2;
+    flex-basis: 300px;
+
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 1vw;
+    padding: 1vw;
+    border: 2px solid black;
+}
+
 .cv_picture {
     flex-grow: 1;
     flex-basis: 300px;
@@ -187,20 +263,30 @@ section {
     margin: 1vw 10vw 1vw;
     padding: 4vw;
     border: 2px solid black;
-    /*    overflow: hidden;*/
-
-    /*
-    max-height: 250px;
-    max-width: 250px;
-*/
 }
 
 
 #cv_pic .sectionwrapper {
     display: flex;
     flex-wrap: wrap;
+    flex-direction: row;
 
     margin: 0vw 10vw;
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    padding-top: 5vw;
+}
+
+.link {
+    width: 18rem;
+    height: 4rem;
+
+    background-color: rgb(146, 248, 214);
+    border-radius: 2vw;
 }
 
 /*
@@ -219,35 +305,32 @@ section {
 
 /*--------------------forside.sprite----------------------*/
 
-#screen {
+#sprite_container {
+    display: flex;
+    flex-wrap: nowrap;
     position: relative;
+
+    justify-content: center;
+    margin: 2vw 27vw;
     /*
-    width: 100vw;
-    height: 56.25vw;
-    margin: 0vw;
-    padding: 0vw;
+    top: 2vw;
+    left: 28vw;
 */
 }
 
-#sprite_container {
-    position: relative;
-    top: 2vw;
-    left: 28vw;
-}
-
 #sprite {
+    /*    position: relative;*/
     background-image: url(bjerg.svg);
-    background-size: 1500% 100%;
+    background-size: 800% 100%;
     width: 45vw;
     height: 45vw;
-    /*    background-repeat: no-repeat;*/
 }
 
 .animation:hover {
     animation-name: bjerg_kf;
-    animation-duration: 3s;
+    animation-duration: 0.8s;
     animation-iteration-count: 1;
-    animation-timing-function: steps(15);
+    animation-timing-function: steps(8);
     animation-fill-mode: forwards;
 }
 
@@ -256,28 +339,16 @@ section {
         background-position: 0% 0%;
     }
 
-    50% {
-        background-position: -1500% 0%;
-        /*        transform: rotate(0deg);*/
-    }
-
-    60% {
-        /*        transform: rotate(35deg);*/
-    }
-
-    85% {
-        /*        transform: rotate(-35deg);*/
-    }
-
     100% {
-        transform: rotate(0deg);
+        background-position: -800% 0%;
     }
 }
 
+/*
 #button {
     background-image: url(button.svg);
     background-size: 100%;
-    position: absolute;
+    position: relative;
     background-repeat: no-repeat;
     width: 20vw;
     height: 6vw;
@@ -285,6 +356,7 @@ section {
     top: 19.6vw;
     z-index: 2;
 }
+*/
 
 /*
 .pulse:hover {
