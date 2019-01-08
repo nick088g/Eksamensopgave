@@ -110,7 +110,6 @@ header {
         display: flex;
         flex-direction: column;
         text-align: right;
-        width: 50%;
     }
 
     header nav a {
@@ -121,15 +120,32 @@ header {
     header nav a:last-child {
         border-right: none;
     }
+
+    header .logo {
+        display: block;
+        flex-wrap: wrap;
+    }
+
+    header {
+        width: 15vw;
+    }
+
+    .logo {
+        visibility: hidden;
+    }
 }
 
 header .logo {
     display: inline-block;
     flex-wrap: wrap;
 
-    max-height: 3rem;
-    max-width: 3rem;
+    height: 6rem;
+    width: 6rem;
     margin-right: 5rem;
+
+    position: absolute;
+    top: 0vw;
+    left: 2vw;
 
 }
 
@@ -169,37 +185,6 @@ header .logo {
 */
 
 /*------------------sections------------------*/
-
-/*
-#sidenav {
-    height: 100%;
-    width: 100px;
-    position: fixed;
-        z-index: 1;
-    top: 0;
-    left: 0;
-    background-color: rgba(146, 248, 214, 0.71);
-
-    overflow-x: hidden;
-    padding-top: 20px;
-
-
-    display: block;
-    background-size: cover;
-
-
-        display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-}
-
-#sidenav a {
-    font-size: 1.5rem;
-    margin: 0.25rem;
-    padding: 0.25rem;
-    color: white;
-}
-*/
 
 .tema {
     margin-left: 100px;
@@ -329,9 +314,9 @@ main {
 .animation:hover {
     animation-name: bjerg_kf;
     animation-duration: 0.8s;
-    animation-iteration-count: 1;
+    animation-iteration-count: infinite;
     animation-timing-function: steps(8);
-    animation-fill-mode: forwards;
+    animation-fill-mode: backwards;
 }
 
 @keyframes bjerg_kf {
@@ -344,11 +329,10 @@ main {
     }
 }
 
-/*
 #button {
     background-image: url(button.svg);
     background-size: 100%;
-    position: relative;
+    position: absolute;
     background-repeat: no-repeat;
     width: 20vw;
     height: 6vw;
@@ -356,9 +340,7 @@ main {
     top: 19.6vw;
     z-index: 2;
 }
-*/
 
-/*
 .pulse:hover {
     animation-name: pulse_kf;
     animation-duration: 1s;
@@ -380,4 +362,3 @@ main {
         transform: scale(4.05);
     }
 }
-*/
