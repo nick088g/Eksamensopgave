@@ -9,5 +9,15 @@ function forsideSprite() {
 function goSprite() {
     console.log("sprite igang");
 
+    document.querySelector("#sprite").classList.add("animation");
+
+    document.querySelector("#sprite").addEventListener("animationend", cvSide);
+
+
+}
+
+function cvSide() {
+    console.log("cvSide");
+
     window.location = 'cv.html';
 }
