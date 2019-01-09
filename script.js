@@ -1,4 +1,11 @@
-window.addEventListener("load", forsideSprite);
+window.addEventListener("load", sidenVises);
+
+function sidenVises() {
+    console.log("siden vises");
+    //Hvad der skal ske
+    forsideSprite();
+}
+
 
 function forsideSprite() {
     console.log("forside");
@@ -9,10 +16,10 @@ function forsideSprite() {
 function goSprite() {
     console.log("sprite igang");
 
+    document.querySelector("#button").classList.remove("button");
     document.querySelector("#sprite").classList.add("animation");
 
     document.querySelector("#sprite").addEventListener("animationend", cvSide);
-
 
 }
 
